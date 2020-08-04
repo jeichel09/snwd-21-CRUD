@@ -1,0 +1,17 @@
+<table border="1">
+    <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th>Actions</th>
+    </tr>
+    {% for user in users %}
+    <tr>
+        <td>{{ user.first_name }}</td>
+        <td>{{ user.last_name }}</td>
+        <td>{{ user.email }}</td>
+        <td><a href="/add_edit?id={{ user.id }}">edit</a> | <a href="/delete?id={{ user.id }}">delete</a></td>
+    </tr>
+    {% endfor %}
+</table>
+<a href="/add_edit">Add a new user</a>

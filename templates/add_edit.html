@@ -1,0 +1,9 @@
+<form method=""POST action="/add_edit{% if user %}?id={{ user.id }}{% endif %}">
+    <input type="text" placeholder="First name" name="first_name" required
+           {% if user %}value="{{ user.first_name }}"{% endif %}><br>
+    <input type="text" placeholder="Last name" name="last_name" required
+            {% if user %}value="{{ user.last_name }}"{% endif %}><br>
+    <input type="email" placeholder="Email" name="email" required
+            {% if user %}value="{{ user.email }}"{% endif %}><br>
+    <button>OK</button>
+</form>
