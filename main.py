@@ -17,6 +17,7 @@ def delete():
         user.deleted = True
     return make_response(redirect(url_for('index')))
 
+
 @app.route("/add_edit", methods=["GET", "POST"])
 def add_edit():
     user = None
