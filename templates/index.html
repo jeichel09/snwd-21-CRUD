@@ -6,12 +6,14 @@
         <th>Actions</th>
     </tr>
     {% for user in users %}
-    <tr>
-        <td>{{ user.first_name }}</td>
-        <td>{{ user.last_name }}</td>
-        <td>{{ user.email }}</td>
-        <td><a href="/add_edit?id={{ user.id }}">edit</a> | <a href="/delete?id={{ user.id }}">delete</a></td>
-    </tr>
+        {% if user.deleted == False %}
+        <tr>
+            <td>{{ user.first_name }}</td>
+            <td>{{ user.last_name }}</td>
+            <td>{{ user.email }}</td>
+            <td><a href="/add_edit?id={{ user.id }}">edit</a> | <a href="/delete?id={{ user.id }}">delete</a></td>
+        </tr>
+        {% endif %}
     {% endfor %}
 </table>
 <a href="/add_edit">Add a new user</a>
