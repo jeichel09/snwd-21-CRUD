@@ -8,3 +8,4 @@ class User(db.Model):
     first_name = db.Column(db.String)
     last_name = db.Column(db.String)
     email = db.Column(db.String)
+    deleted = db.Column(db.Boolean(), default=False)
