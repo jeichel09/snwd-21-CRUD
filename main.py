@@ -13,8 +13,8 @@ def index():
 def delete():
     user_id = request.args.get("id")
     if user_id:
-        db.query(User).get(user_id).delete()
-        db.commit()
+        user = User.query.get(user_id)
+        user.deleted = True
     return make_response(redirect(url_for('index')))
 
 @app.route("/add_edit", methods=["GET", "POST"])
